@@ -23,6 +23,6 @@ internal class MainControllerTest {
             .andExpect { status { is2xxSuccessful() } }
             .andReturn()
             .response.contentAsString
-            .apply { contains("""Hello world""") }
+            .apply { contains("""Hello there""") }
     }
 }

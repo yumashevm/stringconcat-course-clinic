@@ -4,7 +4,7 @@ plugins {
     java
     id("org.springframework.boot") version "2.5.3"
     id("io.spring.dependency-management") version "1.0.11.RELEASE"
-    kotlin("jvm") version "1.5.21"
+    kotlin("jvm")
     kotlin("plugin.spring") version "1.5.21"
     id("io.gitlab.arturbosch.detekt") version "1.17.1"
     jacoco
@@ -51,3 +51,8 @@ tasks.jacocoTestCoverageVerification {
         }
     }
 }
+
+springBoot {
+    mainClass.set("com.stringconcat.dev.course.clinic.MainKt")
+}
+
