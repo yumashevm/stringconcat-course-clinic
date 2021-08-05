@@ -35,6 +35,6 @@ tasks.withType<Test> {
 }
 
 springBoot {
-    mainClass.set("com.stringconcat.dev.course.clinic.Main.kt")
+    mainClass.set("com.stringconcat.dev.course.clinic.MainKt")
 }
 
