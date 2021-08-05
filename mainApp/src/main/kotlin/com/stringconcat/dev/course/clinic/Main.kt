@@ -18,7 +18,7 @@ class MainController {
 
     @GetMapping(path = ["/hello"])
     fun hello(): String {
-        return """Hello world"""
+        return """Hello there"""
     }
 
 }
