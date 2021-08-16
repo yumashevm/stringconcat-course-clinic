@@ -1,10 +1,13 @@
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
+    java
     id("org.springframework.boot") version "2.5.3"
     id("io.spring.dependency-management") version "1.0.11.RELEASE"
     kotlin("jvm")
     kotlin("plugin.spring") version "1.5.21"
+    id("io.gitlab.arturbosch.detekt") version "1.17.1"
+    jacoco
 }
 
 group = "com.stringconcat.dev.course"
@@ -29,9 +32,24 @@ tasks.withType<KotlinCompile> {
         jvmTarget = "11"
     }
 }
-
 tasks.withType<Test> {
     useJUnitPlatform()
+    finalizedBy(tasks.jacocoTestReport)
+    finalizedBy(tasks.jacocoTestCoverageVerification)
+}
+
+tasks.jacocoTestReport {
+    dependsOn(tasks.test)
+}
+
+tasks.jacocoTestCoverageVerification {
+    violationRules {
+        rule {
+            limit {
+                minimum = "0.4".toBigDecimal()
+            }
+        }
+    }
 }
 
 springBoot {

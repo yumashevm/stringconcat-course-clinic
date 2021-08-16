@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RestController
 class ClinicApplication
 
 fun main(args: Array<String>) {
-    runApplication<ClinicApplication>(*args)
+    runApplication<ClinicApplication>(args = args)
 }
 
 @RestController
@@ -18,7 +18,11 @@ class MainController {
 
     @GetMapping(path = ["/hello"])
     fun hello(): String {
-        return """Hello there"""
+        return Companion.GREETINGS
+    }
+
+    companion object {
+        const val GREETINGS = """Hello there"""
     }
 
 }

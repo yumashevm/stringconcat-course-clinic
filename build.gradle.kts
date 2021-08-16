@@ -2,13 +2,6 @@ plugins {
     kotlin("jvm")
 }
 
-group = "com.stringconcat.dev.course"
-version = "1.0-SNAPSHOT"
-
-repositories {
-    mavenCentral()
-}
-
-dependencies {
-    implementation(kotlin("stdlib"))
+subprojects {
+    group = "com.stringconcat.dev.course"
 }
