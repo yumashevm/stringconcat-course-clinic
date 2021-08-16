@@ -1,5 +1,6 @@
 package com.stringconcat.dev.course.clinic
 
+import org.junit.jupiter.api.Assertions
 import org.junit.jupiter.api.Test
 
 import org.junit.jupiter.api.Assertions.*
@@ -19,6 +20,7 @@ internal class MainControllerTest {
 
     @Test
     fun hello() {
+        Assertions.assertFalse(true)
         mockMvc.get("/hello")
             .andExpect { status { is2xxSuccessful() } }
             .andReturn()
