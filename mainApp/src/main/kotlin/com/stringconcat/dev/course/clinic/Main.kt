@@ -5,7 +5,6 @@ import org.springframework.boot.runApplication
 import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.RestController
 
-
 @SpringBootApplication
 class ClinicApplication
 
@@ -18,11 +17,10 @@ class MainController {
 
     @GetMapping(path = ["/hello"])
     fun hello(): String {
-        return Companion.GREETINGS
+        return GREETINGS
     }
 
     companion object {
         const val GREETINGS = """Hello there"""
     }
-
 }

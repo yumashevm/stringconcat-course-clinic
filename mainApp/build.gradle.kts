@@ -52,6 +52,14 @@ tasks.jacocoTestCoverageVerification {
     }
 }
 
+detekt {
+    config = files("config/detekt/detekt.yml")
+    buildUponDefaultConfig = true
+    dependencies {
+        detektPlugins("io.gitlab.arturbosch.detekt:detekt-formatting:1.17.1")
+    }
+}
+
 springBoot {
     mainClass.set("com.stringconcat.dev.course.clinic.MainKt")
 }
