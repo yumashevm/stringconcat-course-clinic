@@ -1,9 +1,4 @@
-rootProject.name = "stringconcat-course-clinic"
+rootProject.name = "clinic-app"
 
-pluginManagement {
-    plugins {
-        kotlin("jvm") version "1.5.21"
-    }
-}
-
-include(":mainApp")
+include(":clinic:domain")
+include(":common:types")
