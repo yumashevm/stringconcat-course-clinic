@@ -1,13 +1,11 @@
-package com.stringconcat.dev.course.clinic.domain.doctor
+package com.stringconcat.dev.course.common.types.common
 
-import com.stringconcat.dev.course.common.types.common.PersonName
-import com.stringconcat.dev.course.common.types.common.PersonNameError
 import io.kotest.assertions.arrow.either.shouldBeLeft
 import io.kotest.assertions.arrow.either.shouldBeRight
 import io.kotest.matchers.shouldBe
 import org.junit.jupiter.api.Test
 
-internal class DoctorNameTest {
+internal class PersonNameTest {
 
     @Test
     fun `correct name - successfully created`() {

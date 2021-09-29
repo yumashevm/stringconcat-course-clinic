@@ -10,13 +10,13 @@ internal class LicenceTest {
 
     @ParameterizedTest
     @ValueSource(strings = ["АА-ММ 123456", "ММ-АА 123456"])
-    fun shouldBeOk(input: String) {
+    fun `correct format - successfully created`(input: String) {
         Licence.from(input) shouldBeRight { it.num shouldBe input }
     }
 
     @ParameterizedTest
     @ValueSource(strings = ["АD-ММ 123456", " dsadsad", "123456", "АА-ММ 12345"])
-    fun shouldBeNotOk(input: String) {
+    fun `incorrect format - should be fail`(input: String) {
         Licence.from(input) shouldBeLeft LicenceFormatError
     }
 }

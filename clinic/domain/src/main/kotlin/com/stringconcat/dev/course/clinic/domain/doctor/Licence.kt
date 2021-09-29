@@ -6,7 +6,7 @@ import arrow.core.right
 import com.stringconcat.dev.course.common.types.base.ValueObject
 import com.stringconcat.dev.course.common.types.error.BusinessError
 
-data class Licence(val num: String) : ValueObject {
+data class Licence internal constructor(val num: String) : ValueObject {
     companion object {
         private val regex = Regex("^[а-яА-Я]{2}-[а-яА-Я]{2} \\d{6}\$")
 
