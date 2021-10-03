@@ -1,3 +1,3 @@
 subprojects {
-    group = "com.stringconcat.course.dev.common"
+    group = "com.stringconcat.dev.course.common"
 }

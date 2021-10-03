@@ -40,4 +40,4 @@ class Doctor internal constructor(
     }
 }
 
-data class DoctorWithSameNameAlreadyExistsError(var name: PersonName) : BusinessError
+data class DoctorWithSameNameAlreadyExistsError(val name: PersonName) : BusinessError

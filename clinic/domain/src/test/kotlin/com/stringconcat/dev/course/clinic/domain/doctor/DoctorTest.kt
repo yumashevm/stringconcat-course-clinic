@@ -43,7 +43,6 @@ internal class DoctorTest {
         }
     }
 
-
     @Test
     fun `recruit Doctor - already exists`() {
 

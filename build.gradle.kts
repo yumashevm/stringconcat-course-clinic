@@ -1,30 +1,21 @@
 val parentProjectDir = projectDir
 
 plugins {
-    kotlin("jvm") version "1.5.31"
-    java
+    id("org.jetbrains.kotlin.jvm") version "1.5.31" apply false
     id("io.gitlab.arturbosch.detekt") version "1.18.1"
     id("com.github.ben-manes.versions") version "0.39.0"
     id("org.owasp.dependencycheck") version "6.3.1"
 }
-
-group = "com.stringconcat.course.dev"
-version = "1.0-SNAPSHOT"
 
 repositories {
     mavenCentral()
     mavenLocal()
 }
 
-
-tasks.getByName<Test>("test") {
-    useJUnitPlatform()
-}
-
 subprojects {
     apply {
         plugin("java")
-        plugin("kotlin")
+        plugin("org.jetbrains.kotlin.jvm")
         plugin("io.gitlab.arturbosch.detekt")
         plugin("jacoco")
         plugin("com.github.ben-manes.versions")
@@ -110,7 +101,6 @@ subprojects {
 
         withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile> {
             kotlinOptions {
-                jvmTarget = "1.8"
                 jvmTarget = JavaVersion.VERSION_11.toString()
                 allWarningsAsErrors = failOnWarning
                 freeCompilerArgs = listOf("-Xjvm-default=enable")
